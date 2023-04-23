@@ -13,16 +13,6 @@ namespace NCAAProject
             string coachListSql = "SELECT \r\n  CONCAT(FirstName, ' ', LastName) AS FullName\r\nFROM \r\n  NCAA.HeadCoach;";
             AddCoachesToDropDown(coachListSql);
 
-            string compareSql =
-                "SELECT\r\n  CoachA.FirstName,\r\n  CoachA.LastName,\r\n  CollegeA.[Name] AS CollegeName,\r\n  COUNT(CASE WHEN WinningCoach.CoachID = CoachA.CoachID THEN 1 END) AS TotalWins,\r\n  COUNT(CASE WHEN LosingCoach.CoachID = CoachA.CoachID THEN 1 END) AS TotalLosses,\r\n  COUNT(CASE WHEN WinningTeam.CoachID = CoachA.CoachID AND Game.[Round] = 2 THEN 1 END) AS TotalChips,\r\n  COUNT(CASE WHEN WinningTeam.CoachID = CoachA.CoachID AND Game.[Round] = 4 THEN 1 END) AS FinalFourAppearances" +
-                "FROM\r\n  HeadCoach CoachA\r\n  INNER JOIN Team WinningTeam ON WinningTeam.CoachID = CoachA.CoachID\r\n  INNER JOIN College CollegeA ON CollegeA.CollegeID = WinningTeam.CollegeID\r\n  INNER JOIN Game ON Game.WinningTeamID = WinningTeam.TeamID\r\n  INNER JOIN HeadCoach WinningCoach ON WinningCoach.CoachID = WinningTeam.CoachID\r\n  INNER JOIN Team LosingTeam ON Game.LosingTeamID = LosingTeam.TeamID\r\n  INNER JOIN HeadCoach LosingCoach ON LosingCoach.CoachID = LosingTeam.CoachID" +
-                "WHERE\r\n  CoachA.FirstName = 'Bill'\r\n  AND CoachA.LastName = 'Self'" +
-                "GROUP BY\r\n  CoachA.FirstName,\r\n  CoachA.LastName,\r\n  CollegeA.[Name];";
-
-
-            
-
-            
         }
 
         private void compareButton_Click(object sender, EventArgs e)

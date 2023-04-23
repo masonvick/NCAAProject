@@ -35,24 +35,26 @@ namespace NCAAProject
         private void button1_Click(object sender, EventArgs e)
         {
             // create instance of Form1
-            CoachForm form1 = new CoachForm();
+            CoachForm form = new CoachForm();
 
             // add Form1 to the panel
-            form1.TopLevel = false;
-            form1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(form1);
-            form1.Dock = DockStyle.Fill;
-            form1.Show();
+            //form1.TopLevel = false;
+            //form1.Dock = DockStyle.Fill;
+            //form1.Parent = panel1;
+            //form1.AutoScroll = true;
+            //form1.FormBorderStyle = FormBorderStyle.None;
+            //panel1.Controls.Clear();
+            //panel1.Controls.Add(form);
+            form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             // create instance of Form1
-            CoachForm form1 = new CoachForm();
+            TourneyForm form = new TourneyForm();
 
             // display Form1
-            form1.Show();
+            form.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dropDownList1 = new System.Windows.Forms.ComboBox();
             this.dropDownList2 = new System.Windows.Forms.ComboBox();
             this.compareButton = new System.Windows.Forms.Button();
